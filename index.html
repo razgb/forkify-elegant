@@ -3,8 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Netlify Dark</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Netlify Elegant</title>
+    <link rel="stylesheet" href="css/General.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+
+    <!-- Font links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons  -->
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <!-- Contains brand image, search bar, and [add recipe, bookmarks] -->
+      <header class="header">
+        <img
+          class="nav__img"
+          src="images/Clean Elegant Typography Brand Logo.png"
+          alt=""
+        />
+
+        <form class="searchForm">
+          <input
+            class="inputForm"
+            type="text"
+            placeholder="Search millions of recipes..."
+          />
+          <button class="btnForm" type="submit">
+            <span>SEARCH</span>
+          </button>
+        </form>
+
+        <div class="nav">
+          <button class="nav__item">
+            <i class="nav__icon fi fi-ts-pen-nib"></i>
+            <span class="nav__text">Add recipe</span>
+          </button>
+          <button class="nav__item">
+            <i class="nav__icon fi fi-ts-book-bookmark"></i>
+            <span class="nav__text">Bookmarks</span>
+          </button>
+        </div>
+      </header>
+    </div>
+  </body>
 </html>

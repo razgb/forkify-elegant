@@ -1,0 +1,39 @@
+/* COLORS */
+/* @import "~@flaticon/flaticon-uicons/css/regular/straight.css"; */
+@import url("https://cdn-uicons.flaticon.com/2.0.0/uicons-thin-straight/css/uicons-thin-straight.css");
+@import url("https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css");
+
+:root {
+  --color-primary: #fffaf0;
+  --color-primary-hover: #f4efe4;
+
+  --color-secondary: #422a23;
+  --color-secondary-hover: #312016;
+
+  --color-text: #333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Source Sans 3", sans-serif;
+}
+
+.header {
+  background-color: #fffaf0;
+  height: 10rem;
+}
+
+.text {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
