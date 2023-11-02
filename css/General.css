@@ -15,7 +15,7 @@
   --background-darker: rgb(22, 11, 1);
   /* --color-text: #190d01; */
 
-  --gradient: linear-gradient(to bottom right, rgb(137, 67, 6), rgb(30, 15, 2));
+  --gradient: linear-gradient(to bottom right, rgb(93, 45, 4), rgb(30, 15, 2));
 }
 
 * {
@@ -61,4 +61,23 @@ body {
   font-size: 1.6rem;
   font-weight: 400;
   color: var(--color-secondary-lighter);
+}
+
+.btn {
+  font-size: 1.8rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-weight: 500;
+
+  padding: 1.2rem 3.6rem;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--color-secondary-hover);
 }

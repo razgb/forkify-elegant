@@ -65,8 +65,9 @@
 } */
 
 .search__heading {
-  font-size: 2rem;
+  font-family: "Cormorant Garamond", serif;
   font-weight: 500;
+  font-size: 2rem;
 }
 
 .search__subheading {

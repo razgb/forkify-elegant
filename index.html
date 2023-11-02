@@ -16,6 +16,11 @@
       href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap"
       rel="stylesheet"
     />
+    <!-- Secondary font link -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Source+Sans+3:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Icons  -->
   </head>
@@ -25,8 +30,8 @@
       <header class="header">
         <img
           class="nav__img"
-          src="images/Clean Elegant Typography Brand Logo.png"
-          alt=""
+          src="images/Clean Elegant Typography Brand Logo(1).png"
+          alt="Brand Logo"
         />
 
         <form class="searchForm">
@@ -35,8 +40,8 @@
             type="text"
             placeholder="Search millions of recipes..."
           />
-          <button class="btnForm" type="submit">
-            <span>SEARCH</span>
+          <button class="btn btnForm" type="submit">
+            <span>Search</span>
           </button>
         </form>
 
@@ -122,7 +127,7 @@
           </div>
 
           <div class="recipe">
-            <figure class="recipe__figure">
+            <section class="recipe__figure">
               <img class="recipe__img" src="images/apple-crumble.avif" alt="" />
               <h3 class="recipe__heading">Apple Crumble</h3>
 
@@ -131,12 +136,17 @@
                   <div>
                     <i class="recipe__icon fi fi-rr-alarm-clock"></i>
                   </div>
-                  <span class="recipe__info"> 45 Minutes </span>
+                  <span class="recipe__info"
+                    ><strong class="ingredient__highlight">45</strong> Minutes
+                  </span>
                 </div>
 
                 <div class="recipe__details">
                   <i class="recipe__icon fi fi-rs-users"></i>
-                  <span class="recipe__info">4 Servings</span>
+                  <span class="recipe__info"
+                    ><strong class="ingredient__highlight">4</strong>
+                    Servings</span
+                  >
                   <div>
                     <i
                       class="recipe__icon serving__icon fi fi-rr-minus-circle"
@@ -145,49 +155,78 @@
                   </div>
                 </div>
               </div>
-            </figure>
+            </section>
 
-            <div class="recipe__ingredients">
+            <section class="recipe__ingredients">
               <h3 class="ingredients__heading">Recipe Ingredients</h3>
               <ul class="recipe__ingredients--list">
                 <div>
-                  <li class="recipe__ingredient">300 oz plain flour</li>
+                  <li class="recipe__ingredient">
+                    <strong class="ingredient__highlight"> 300</strong> oz plain
+                    flour
+                  </li>
                 </div>
                 <div>
                   <li class="recipe__ingredient">
-                    175 oz unrefined brown sugar
+                    <strong class="ingredient__highlight"> 175</strong> oz
+                    unrefined brown sugar
                   </li>
                 </div>
 
                 <div>
-                  <li class="recipe__ingredient">200 oz unsalted butter</li>
-                </div>
-
-                <div>
-                  <li class="recipe__ingredient">Knob of butter</li>
-                </div>
-
-                <div>
-                  <li class="recipe__ingredient">450 l apples</li>
-                </div>
-
-                <div>
                   <li class="recipe__ingredient">
-                    50 oz unrefined brown sugar
+                    <strong class="ingredient__highlight"> 200</strong> oz
+                    unsalted butter
                   </li>
                 </div>
 
                 <div>
-                  <li class="recipe__ingredient">1 tbsp plain flour</li>
+                  <li class="recipe__ingredient">
+                    <strong class="ingredient__highlight"> Knob</strong> of
+                    butter
+                  </li>
                 </div>
 
                 <div>
-                  <li class="recipe__ingredient">1 pinch of ground cinnamon</li>
+                  <li class="recipe__ingredient">
+                    <strong class="ingredient__highlight"> 450</strong> l apples
+                  </li>
+                </div>
+
+                <div>
+                  <li class="recipe__ingredient">
+                    <strong class="ingredient__highlight"> 50</strong> oz
+                    unrefined brown sugar
+                  </li>
+                </div>
+
+                <div>
+                  <li class="recipe__ingredient">
+                    <strong class="ingredient__highlight"> 1</strong> tbsp plain
+                    flour
+                  </li>
+                </div>
+
+                <div>
+                  <li class="recipe__ingredient">
+                    <strong class="ingredient__highlight"> 1</strong> pinch of
+                    ground cinnamon
+                  </li>
                 </div>
               </ul>
-            </div>
+            </section>
 
-            <div class="recipe__directions"></div>
+            <section class="recipe__directions">
+              <h3 class="recipe__directions--heading">How to cook it</h3>
+              <span class="recipe__directions--text"
+                >This recipe was carefully designed and tested by
+                <strong>BBC Food</strong>. Please check out directions at their
+                website.</span
+              >
+              <button class="btn recipe__directions--btn">
+                Author's website
+              </button>
+            </section>
           </div>
         </div>
       </main>

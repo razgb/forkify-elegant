@@ -8,12 +8,27 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  padding-bottom: 2.4rem;
+}
+
+.recipe__figure::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 50rem;
+  height: 1px;
+  background: var(--color-secondary);
+  transform: translateX(-50%);
 }
 
 .recipe__heading {
   font-size: 3.6rem;
   font-weight: 400;
-  background-color: var(--color-secondary);
+  font-family: "Cormorant Garamond", serif;
+
+  background-color: rgba(67, 43, 35, 0.95);
   color: var(--color-primary);
 
   padding: 0.8rem 2.4rem;
@@ -38,6 +53,7 @@
   width: 64rem;
   height: 36rem;
   object-fit: cover;
+  border-radius: 0.4rem;
 }
 
 .recipe__icon {
@@ -54,19 +70,77 @@
 
 .recipe__info {
   display: block;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   font-weight: 300;
   height: 100%;
 }
 
-/* /////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 .recipe__ingredients {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.2rem;
+  padding-block: 2.4rem;
 }
+
+.recipe__ingredients::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 50rem;
+  height: 1px;
+  background: var(--color-secondary);
+  transform: translateX(-50%);
+}
+
 .ingredients__heading {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.4rem;
+  font-weight: 500;
 }
+
 .recipe__ingredients--list {
   list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 1.6rem;
 }
 .recipe__ingredient {
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+
+.ingredient__highlight {
+  font-weight: 400;
+}
+
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+.recipe__directions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4rem;
+
+  padding-block: 2.4rem;
+}
+
+.recipe__directions--heading {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.4rem;
+  font-weight: 500;
+  padding-bottom: 1.2rem;
+}
+
+.recipe__directions--text {
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+
+.recipe__directions--btn {
+  padding: 1.2rem 3.6rem;
 }
