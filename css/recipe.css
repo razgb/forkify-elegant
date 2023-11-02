@@ -1,7 +1,9 @@
 .recipe {
   min-width: 80rem;
   gap: 1.2rem;
-  padding: 1.2rem;
+  padding: 2.4rem;
+
+  border-left: 1rem solid rgb(93, 45, 4);
 }
 
 .recipe__figure {
@@ -9,7 +11,7 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  padding-bottom: 2.4rem;
+  padding-bottom: 3.6rem;
 }
 
 .recipe__figure::after {
@@ -50,27 +52,46 @@
 
 .recipe__img {
   /* Both divisible by 16 and 9 respectively. */
-  width: 64rem;
-  height: 36rem;
+  /* width: 64rem;
+  height: 36rem; */
+  position: relative;
+  width: 54.4rem;
+  height: 30.6rem;
   object-fit: cover;
   border-radius: 0.4rem;
 }
 
+.recipe__img::before {
+  content: "";
+  opacity: 0.6;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(93, 45, 4),
+    rgb(30, 15, 2)
+  );
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .recipe__icon {
-  font-size: 2rem;
+  font-size: 1.6rem;
   color: var(--color-secondary-lighter);
 }
 
 /* Plus and Minus icons */
 .serving__icon:hover {
-  transform: translateY(-0.1rem);
+  transform: translateY(-0.5rem);
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .recipe__info {
   display: block;
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 300;
   height: 100%;
 }
@@ -83,7 +104,7 @@
   flex-direction: column;
   align-items: center;
   gap: 3.2rem;
-  padding-block: 2.4rem;
+  padding-block: 3.2rem;
 }
 
 .recipe__ingredients::after {
@@ -93,7 +114,7 @@
   left: 50%;
   width: 50rem;
   height: 1px;
-  background: var(--color-secondary);
+  background: var(--color-secondary-lighter);
   transform: translateX(-50%);
 }
 
@@ -109,7 +130,12 @@
   grid-template-columns: 1fr 1fr;
   row-gap: 1.6rem;
 }
+
 .recipe__ingredient {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+
   font-size: 1.8rem;
   font-weight: 300;
 }
@@ -126,7 +152,7 @@
   align-items: center;
   gap: 2.4rem;
 
-  padding-block: 2.4rem;
+  padding-block: 3.6rem;
 }
 
 .recipe__directions--heading {
@@ -139,6 +165,7 @@
 .recipe__directions--text {
   font-size: 1.8rem;
   font-weight: 300;
+  text-align: center;
 }
 
 .recipe__directions--btn {
