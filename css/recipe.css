@@ -1,7 +1,11 @@
 .recipe {
   min-width: 80rem;
   gap: 1.2rem;
+  padding: 1.2rem;
 }
+
+/* .recipe__item {
+} */
 
 .recipe__img {
   /* Both divisible by 16 and 9 respectively. */
@@ -9,3 +13,10 @@
   height: 27rem;
   object-fit: cover;
 }
+
+/* .recipe__heading {
+}
+.recipe__details {
+}
+.recipe__info {
+} */

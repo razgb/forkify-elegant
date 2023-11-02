@@ -10,7 +10,8 @@
   --color-secondary: #422a23;
   --color-secondary-hover: #312016;
 
-  --color-text: #333;
+  --background: rgba(22, 11, 1, 0.897);
+  --color-text: #0d0701;
 }
 
 * {
@@ -26,7 +27,7 @@ html {
 
 body {
   font-family: "Source Sans 3", sans-serif;
-  background-color: rgba(22, 11, 1, 0.897);
+  background-color: var(--background);
 }
 
 /* .container {
