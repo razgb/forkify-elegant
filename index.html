@@ -42,15 +42,16 @@
 
         <div class="nav">
           <button class="nav__item">
-            <i class="nav__icon fi fi-ts-pen-nib"></i>
+            <i class="nav__icon fi fi-rr-books-medical"></i>
             <span class="nav__text">Add recipe</span>
           </button>
           <button class="nav__item">
-            <i class="nav__icon fi fi-ts-book-bookmark"></i>
+            <i class="nav__icon fi fi-rs-book-bookmark"></i>
             <span class="nav__text">Bookmarks</span>
           </button>
         </div>
       </header>
+
       <main class="main">
         <div class="results-recipe-box">
           <div class="search-results">
@@ -121,19 +122,72 @@
           </div>
 
           <div class="recipe">
-            <div class="recipe__item">
+            <figure class="recipe__figure">
               <img class="recipe__img" src="images/apple-crumble.avif" alt="" />
               <h3 class="recipe__heading">Apple Crumble</h3>
 
-              <div class="recipe__details">
-                <div class="recipe__info"><span>45 Minutes</span></div>
-              </div>
-              <div class="recipe__details">
-                <div class="recipe__info">
-                  <span>4 Servings</span><span>-/+</span>
+              <div class="recipe__detail--container">
+                <div class="recipe__details">
+                  <div>
+                    <i class="recipe__icon fi fi-rr-alarm-clock"></i>
+                  </div>
+                  <span class="recipe__info"> 45 Minutes </span>
+                </div>
+
+                <div class="recipe__details">
+                  <i class="recipe__icon fi fi-rs-users"></i>
+                  <span class="recipe__info">4 Servings</span>
+                  <div>
+                    <i
+                      class="recipe__icon serving__icon fi fi-rr-minus-circle"
+                    ></i>
+                    <i class="recipe__icon serving__icon fi fi-rs-add"></i>
+                  </div>
                 </div>
               </div>
+            </figure>
+
+            <div class="recipe__ingredients">
+              <h3 class="ingredients__heading">Recipe Ingredients</h3>
+              <ul class="recipe__ingredients--list">
+                <div>
+                  <li class="recipe__ingredient">300 oz plain flour</li>
+                </div>
+                <div>
+                  <li class="recipe__ingredient">
+                    175 oz unrefined brown sugar
+                  </li>
+                </div>
+
+                <div>
+                  <li class="recipe__ingredient">200 oz unsalted butter</li>
+                </div>
+
+                <div>
+                  <li class="recipe__ingredient">Knob of butter</li>
+                </div>
+
+                <div>
+                  <li class="recipe__ingredient">450 l apples</li>
+                </div>
+
+                <div>
+                  <li class="recipe__ingredient">
+                    50 oz unrefined brown sugar
+                  </li>
+                </div>
+
+                <div>
+                  <li class="recipe__ingredient">1 tbsp plain flour</li>
+                </div>
+
+                <div>
+                  <li class="recipe__ingredient">1 pinch of ground cinnamon</li>
+                </div>
+              </ul>
             </div>
+
+            <div class="recipe__directions"></div>
           </div>
         </div>
       </main>

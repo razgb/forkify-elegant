@@ -7,6 +7,7 @@
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
+  padding-block: 3.2rem;
 
   border-right: 1rem solid var(--background);
 }
@@ -41,6 +42,10 @@
   background-color: var(--color-primary-hover);
 }
 
+.search__item:last-child::after {
+  height: 0;
+}
+
 .search__img {
   width: 7.5rem;
   height: 7.5rem;
@@ -58,10 +63,12 @@
 
 /* .search__link {
 } */
+
 .search__heading {
   font-size: 2rem;
   font-weight: 500;
 }
+
 .search__subheading {
   display: block;
   font-size: 1.4rem;

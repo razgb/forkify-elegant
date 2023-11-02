@@ -4,19 +4,69 @@
   padding: 1.2rem;
 }
 
-/* .recipe__item {
-} */
+.recipe__figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.recipe__heading {
+  font-size: 3.6rem;
+  font-weight: 400;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+
+  padding: 0.8rem 2.4rem;
+  transform: translateY(-50%);
+}
+
+.recipe__detail--container {
+  display: flex;
+  align-items: center;
+  gap: 4.8rem;
+}
+
+.recipe__details {
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
 
 .recipe__img {
   /* Both divisible by 16 and 9 respectively. */
-  width: 48rem;
-  height: 27rem;
+  width: 64rem;
+  height: 36rem;
   object-fit: cover;
 }
 
-/* .recipe__heading {
+.recipe__icon {
+  font-size: 2rem;
+  color: var(--color-secondary-lighter);
 }
-.recipe__details {
+
+/* Plus and Minus icons */
+.serving__icon:hover {
+  transform: translateY(-0.1rem);
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
+
 .recipe__info {
-} */
+  display: block;
+  font-size: 2.4rem;
+  font-weight: 300;
+  height: 100%;
+}
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+.recipe__ingredients {
+}
+.ingredients__heading {
+}
+.recipe__ingredients--list {
+  list-style: none;
+}
+.recipe__ingredient {
+}
