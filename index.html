@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/nav.css" />
     <link rel="stylesheet" href="css/results.css" />
     <link rel="stylesheet" href="css/recipe.css" />
+    <link rel="stylesheet" href="css/form.css" />
 
     <!-- Font links -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -26,6 +27,7 @@
   </head>
   <body>
     <div class="container">
+      <div class="overlay"></div>
       <!-- Contains brand image, search bar, and [add recipe, bookmarks] -->
       <header class="header">
         <img
@@ -158,47 +160,47 @@
               <ul class="recipe__ingredients--list">
                 <li class="recipe__ingredient">
                   <i class="recipe__icon fi fi-rs-check"></i>
-                  <strong class="ingredient__highlight">300</strong> oz plain
+                  <strong class="ingredient__highlight">300</strong>oz plain
                   flour
                 </li>
 
                 <li class="recipe__ingredient">
                   <i class="recipe__icon fi fi-rs-check"></i>
-                  <strong class="ingredient__highlight">175</strong> oz
-                  unrefined brown sugar
-                </li>
-
-                <li class="recipe__ingredient">
-                  <i class="recipe__icon fi fi-rs-check"></i>
-                  <strong class="ingredient__highlight">200</strong> oz unsalted
-                  butter
-                </li>
-
-                <li class="recipe__ingredient">
-                  <i class="recipe__icon fi fi-rs-check"></i>
-                  <strong class="ingredient__highlight">Knob</strong> of butter
-                </li>
-
-                <li class="recipe__ingredient">
-                  <i class="recipe__icon fi fi-rs-check"></i>
-                  <strong class="ingredient__highlight">450</strong> l apples
-                </li>
-
-                <li class="recipe__ingredient">
-                  <i class="recipe__icon fi fi-rs-check"></i>
-                  <strong class="ingredient__highlight">50</strong> oz unrefined
+                  <strong class="ingredient__highlight">175</strong>oz unrefined
                   brown sugar
                 </li>
 
                 <li class="recipe__ingredient">
                   <i class="recipe__icon fi fi-rs-check"></i>
-                  <strong class="ingredient__highlight">1</strong> tbsp plain
+                  <strong class="ingredient__highlight">200</strong>oz unsalted
+                  butter
+                </li>
+
+                <li class="recipe__ingredient">
+                  <i class="recipe__icon fi fi-rs-check"></i>
+                  <strong class="ingredient__highlight">Knob</strong>of butter
+                </li>
+
+                <li class="recipe__ingredient">
+                  <i class="recipe__icon fi fi-rs-check"></i>
+                  <strong class="ingredient__highlight">450</strong>l apples
+                </li>
+
+                <li class="recipe__ingredient">
+                  <i class="recipe__icon fi fi-rs-check"></i>
+                  <strong class="ingredient__highlight">50</strong>oz unrefined
+                  brown sugar
+                </li>
+
+                <li class="recipe__ingredient">
+                  <i class="recipe__icon fi fi-rs-check"></i>
+                  <strong class="ingredient__highlight">1</strong>tbsp plain
                   flour
                 </li>
 
                 <li class="recipe__ingredient">
                   <i class="recipe__icon fi fi-rs-check"></i>
-                  <strong class="ingredient__highlight"> 1</strong> pinch of
+                  <strong class="ingredient__highlight">1</strong>pinch of
                   ground cinnamon
                 </li>
               </ul>
@@ -218,6 +220,271 @@
           </div>
         </div>
       </main>
+
+      <div class="add-recipe-window">
+        <button class="btn--close-modal"></button>
+
+        <!-- GRID CONTAINER -->
+        <form class="upload">
+          <!-- Title, url, img, prep time, servings... -->
+          <div class="upload__column column--1">
+            <h3 class="upload__heading">Recipe Data</h3>
+
+            <label class="upload__label--col-1" for="title">Title</label>
+            <input
+              required
+              type="text"
+              name="title"
+              id="title"
+              class="upload__input--col-1"
+              placeholder="Title"
+            />
+
+            <label class="upload__label--col-1" for="url">URL</label>
+            <input
+              required
+              type="text"
+              name="url"
+              id="url"
+              class="upload__input--col-1"
+              placeholder="URL Address"
+            />
+
+            <label class="upload__label--col-1" for="image-url"
+              >Image URL</label
+            >
+            <input
+              required
+              type="text"
+              name="image-url"
+              id="image-url"
+              class="upload__input--col-1"
+              placeholder="Image URL"
+            />
+
+            <label class="upload__label--col-1" for="publisher"
+              >Publisher</label
+            >
+            <input
+              required
+              type="text"
+              name="publisher"
+              id="publisher"
+              class="upload__input--col-1"
+              placeholder="Publisher"
+            />
+
+            <label class="upload__label--col-1" for="prep-time"
+              >Prep Time</label
+            >
+            <input
+              required
+              type="text"
+              name="prep-time"
+              id="prep-time"
+              class="upload__input--col-1"
+              placeholder="Preperation Time"
+            />
+
+            <label class="upload__label--col-1" for="servings">Servings</label>
+            <input
+              required
+              type="text"
+              name="servings"
+              id="servings"
+              class="upload__input--col-1"
+              placeholder="Servings"
+            />
+          </div>
+
+          <!-- Number of units -->
+          <div class="upload__column column--2">
+            <h3 class="upload__heading">Ingredients</h3>
+
+            <!-- Must have atleast 3 ingredients -->
+            <label for="ing-1" class="upload__label"></label>
+            <input
+              required
+              type="text"
+              id="ing-1"
+              name="ing-1"
+              class="upload__input"
+              placeholder="ing 1"
+            />
+
+            <label for="ing-2" class="upload__label"></label>
+            <input
+              required
+              type="text"
+              id="ing-2"
+              name="ing-2"
+              class="upload__input"
+              placeholder="ing 2"
+            />
+
+            <label for="ing-3" class="upload__label"></label>
+            <input
+              required
+              type="text"
+              id="ing-3"
+              name="ing-3"
+              class="upload__input"
+              placeholder="ing 3"
+            />
+
+            <label for="ing-4" class="upload__label"></label>
+            <input
+              type="text"
+              id="ing-4"
+              name="ing-4"
+              class="upload__input"
+              placeholder="ing 4"
+            />
+
+            <label for="ing-5" class="upload__label"></label>
+            <input
+              type="text"
+              id="ing-5"
+              name="ing-5"
+              class="upload__input"
+              placeholder="ing 5"
+            />
+
+            <label for="ing-6" class="upload__label"></label>
+            <input
+              type="text"
+              id="ing-6"
+              name="ing-6"
+              class="upload__input"
+              placeholder="ing 6"
+            />
+          </div>
+
+          <!-- Unit value itself (kg, lb) -->
+          <div class="upload__column column--3">
+            <h3 class="upload__heading">Units</h3>
+
+            <label for="unit-1" class="upload__label"></label>
+            <input
+              required
+              type="text"
+              id="unit-1"
+              name="unit-1"
+              class="upload__input"
+              placeholder="unit 1"
+            />
+
+            <label for="unit-2" class="upload__label"></label>
+            <input
+              required
+              type="text"
+              id="unit-2"
+              name="unit-2"
+              class="upload__input"
+              placeholder="unit 2"
+            />
+
+            <label for="unit-3" class="upload__label"></label>
+            <input
+              required
+              type="text"
+              id="unit-3"
+              name="unit-3"
+              class="upload__input"
+              placeholder="unit 3"
+            />
+
+            <label for="unit-4" class="upload__label"></label>
+            <input
+              type="text"
+              id="unit-4"
+              name="unit-4"
+              class="upload__input"
+              placeholder="unit 4"
+            />
+
+            <label for="unit-5" class="upload__label"></label>
+            <input
+              type="text"
+              id="unit-5"
+              name="unit-5"
+              class="upload__input"
+              placeholder="unit 5"
+            />
+
+            <label for="unit-6" class="upload__label"></label>
+            <input
+              type="text"
+              id="unit-6"
+              name="unit-6"
+              class="upload__input"
+              placeholder="unit 6"
+            />
+          </div>
+
+          <!-- Name of ingredient -->
+          <div class="upload__column column--4">
+            <h3 class="upload__heading">Descriptions</h3>
+
+            <label for="desc-1" class="upload__label"></label>
+            <input
+              required
+              type="text"
+              id="desc-1"
+              name="desc-1"
+              class="upload__input"
+              placeholder="desc 1"
+            />
+
+            <label for="desc-2" class="upload__label"></label>
+            <input
+              required
+              type="text"
+              id="desc-2"
+              name="desc-2"
+              class="upload__input"
+              placeholder="desc 2"
+            />
+
+            <label for="desc-3" class="upload__label"></label>
+            <input
+              required
+              type="text"
+              id="desc-3"
+              name="desc-3"
+              class="upload__input"
+              placeholder="desc 3"
+            />
+
+            <label for="desc-4" class="upload__label"></label>
+            <input
+              type="text"
+              id="desc-4"
+              name="desc-4"
+              class="upload__input"
+              placeholder="desc 4"
+            />
+
+            <label for="desc-5" class="upload__label"></label>
+            <input
+              type="text"
+              id="desc-5"
+              name="desc-5"
+              class="upload__input"
+              placeholder="desc 5"
+            />
+
+            <label for="desc-6" class="upload__label"></label>
+            <input
+              type="text"
+              id="desc-6"
+              name="desc-6"
+              class="upload__input"
+              placeholder="desc 6"
+            />
+          </div>
+        </form>
+      </div>
     </div>
   </body>
 </html>
