@@ -7,10 +7,11 @@
 
   /* This Translates the element back 50% to the left. (Centering trick) */
   transform: translateX(-50%);
+  /* transform: translateY(-50%); */
 
   width: 110rem;
   height: 50rem;
-  padding: 2.4rem 4.8rem;
+  padding: 4.8rem;
   background-color: var(--color-primary);
 
   border-radius: 0.4rem;
@@ -20,33 +21,31 @@
   transition: all 0.3s;
 }
 
-/* find icon for this */
-/* .btn--close-modal {
-} */
+.btn--close-modal {
+  position: absolute;
+
+  top: 0;
+  right: 0;
+  transform: translate(-50%, 50%);
+
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  font-size: 2rem;
+}
 
 .upload {
   display: grid;
-
   column-gap: 3.2rem;
-  row-gap: 4.8rem;
+  row-gap: 3.2rem;
   grid-template-columns: repeat(4, 1fr);
 }
 
 .upload__column {
   display: grid;
-  row-gap: 1.2rem;
   grid-template-columns: 1fr 1fr;
 }
-
-.column--1 .upload__input {
-  width: 15rem;
-}
-
-/* .column--1,
-.column--2,
-.column--3 {
-  width: 0.5fr;
-} */
 
 .upload__heading {
   grid-column: span 2;
@@ -56,41 +55,19 @@
   margin-bottom: 1.2rem;
 }
 
-/* THESE 2 ARE FOR UPLOAD__COLUMN 1 ONLY */
-.upload__label--col-1 {
-  font-size: 1.6rem;
-  /* margin-right: 0.6rem; */
-}
-
-.upload__input--col-1 {
-  height: 3.2rem;
-
-  background-color: var(--color-primary-lighter);
-  border-radius: 0.4rem;
-  border: 1px solid var(--color-secondary-lighter);
-}
-/*  */
-
 .upload__label {
   /* This makes the label fully disappear and have no affect on the DOM. */
   display: none;
 }
 
-/* .upload__label--width-zero {
-  display: none;
-} */
-
 .upload__input {
   grid-column: span 2;
-  /* 
-  max-width: 20rem;
-  width: 20rem;
-  min-width: 10rem; */
-
   width: 100%;
-  /* width: 50%; */
   height: 3.2rem;
   padding-left: 0.4rem;
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
+  color: #848484;
 
   background-color: var(--color-primary-lighter);
   border-radius: 0.4rem;
@@ -99,4 +76,10 @@
 
 .upload__input:focus {
   outline: none;
+}
+
+.upload__btn--form {
+  grid-column: 2 / span 2;
+  width: 30rem;
+  justify-self: center;
 }

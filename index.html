@@ -25,9 +25,12 @@
 
     <!-- Icons  -->
   </head>
+
   <body>
     <div class="container">
       <div class="overlay"></div>
+      <div class="background-layer"></div>
+
       <!-- Contains brand image, search bar, and [add recipe, bookmarks] -->
       <header class="header">
         <img
@@ -121,6 +124,19 @@
                   <span class="search__subheading">BBC food</span>
                 </div>
               </li>
+
+              <!-- <li class="bookmark__item">
+                <img
+                  src="images/apple-crumble.avif"
+                  alt=""
+                  class="bookmark__img"
+                />
+                <div class="bookmark__content">
+                  <a href="" class="bookmark__link"></a>
+                  <h3 class="bookmark__heading">Apple Crumble</h3>
+                  <span class="bookmark__subheading">BBC food</span>
+                </div>
+              </li> -->
             </ul>
           </div>
 
@@ -131,9 +147,8 @@
 
               <div class="recipe__detail--container">
                 <div class="recipe__details">
-                  <div>
-                    <i class="recipe__icon fi fi-rr-alarm-clock"></i>
-                  </div>
+                  <i class="recipe__icon fi fi-rr-alarm-clock"></i>
+
                   <span class="recipe__info"
                     ><strong class="ingredient__highlight">45</strong> Minutes
                   </span>
@@ -145,13 +160,19 @@
                     ><strong class="ingredient__highlight">4</strong>
                     Servings</span
                   >
-                  <div>
-                    <i
-                      class="recipe__icon serving__icon fi fi-rr-minus-circle"
-                    ></i>
-                    <i class="recipe__icon serving__icon fi fi-rs-add"></i>
+
+                  <div class="change-serving-container">
+                    <button class="serving__icon">
+                      <i class="recipe__icon fi fi-rr-minus-circle"></i>
+                    </button>
+                    <button class="serving__icon">
+                      <i class="recipe__icon fi fi-rs-add"></i>
+                    </button>
                   </div>
                 </div>
+
+                <!-- <button class="bookmark__btn"></button> -->
+                <i class="recipe__icon bookmark__icon fi fi-rr-bookmark"></i>
               </div>
             </section>
 
@@ -160,48 +181,65 @@
               <ul class="recipe__ingredients--list">
                 <li class="recipe__ingredient">
                   <i class="recipe__icon fi fi-rs-check"></i>
-                  <strong class="ingredient__highlight">300</strong>oz plain
-                  flour
+                  <div>
+                    <strong class="ingredient__highlight">300</strong> oz plain
+                    flour
+                  </div>
                 </li>
 
                 <li class="recipe__ingredient">
                   <i class="recipe__icon fi fi-rs-check"></i>
-                  <strong class="ingredient__highlight">175</strong>oz unrefined
-                  brown sugar
+                  <div>
+                    <strong class="ingredient__highlight">175</strong> oz
+                    unrefined brown sugar
+                  </div>
                 </li>
 
                 <li class="recipe__ingredient">
                   <i class="recipe__icon fi fi-rs-check"></i>
-                  <strong class="ingredient__highlight">200</strong>oz unsalted
-                  butter
+                  <div>
+                    <strong class="ingredient__highlight">200</strong> oz
+                    unsalted butter
+                  </div>
                 </li>
 
                 <li class="recipe__ingredient">
                   <i class="recipe__icon fi fi-rs-check"></i>
-                  <strong class="ingredient__highlight">Knob</strong>of butter
+                  <div>
+                    <strong class="ingredient__highlight">Knob</strong> of
+                    butter
+                  </div>
                 </li>
 
                 <li class="recipe__ingredient">
                   <i class="recipe__icon fi fi-rs-check"></i>
-                  <strong class="ingredient__highlight">450</strong>l apples
+                  <div>
+                    <strong class="ingredient__highlight">450</strong> l apples
+                  </div>
                 </li>
 
                 <li class="recipe__ingredient">
                   <i class="recipe__icon fi fi-rs-check"></i>
-                  <strong class="ingredient__highlight">50</strong>oz unrefined
-                  brown sugar
+                  <div>
+                    <strong class="ingredient__highlight">50</strong> oz
+                    unrefined brown sugar
+                  </div>
                 </li>
 
                 <li class="recipe__ingredient">
                   <i class="recipe__icon fi fi-rs-check"></i>
-                  <strong class="ingredient__highlight">1</strong>tbsp plain
-                  flour
+                  <div>
+                    <strong class="ingredient__highlight">1</strong> tbsp plain
+                    flour
+                  </div>
                 </li>
 
                 <li class="recipe__ingredient">
                   <i class="recipe__icon fi fi-rs-check"></i>
-                  <strong class="ingredient__highlight">1</strong>pinch of
-                  ground cinnamon
+                  <div>
+                    <strong class="ingredient__highlight">1</strong> pinch of
+                    ground cinnamon
+                  </div>
                 </li>
               </ul>
             </section>
@@ -221,8 +259,10 @@
         </div>
       </main>
 
-      <div class="add-recipe-window">
-        <button class="btn--close-modal"></button>
+      <div class="add-recipe-window hidden">
+        <button class="btn--close-modal">
+          <i class="fi fi-rs-cross"></i>
+        </button>
 
         <!-- GRID CONTAINER -->
         <form class="upload">
@@ -230,69 +270,63 @@
           <div class="upload__column column--1">
             <h3 class="upload__heading">Recipe Data</h3>
 
-            <label class="upload__label--col-1" for="title">Title</label>
+            <label class="upload__label" for="title">Title</label>
             <input
               required
               type="text"
               name="title"
               id="title"
-              class="upload__input--col-1"
+              class="upload__input"
               placeholder="Title"
             />
 
-            <label class="upload__label--col-1" for="url">URL</label>
+            <label class="upload__label" for="url">URL</label>
             <input
               required
               type="text"
               name="url"
               id="url"
-              class="upload__input--col-1"
+              class="upload__input"
               placeholder="URL Address"
             />
 
-            <label class="upload__label--col-1" for="image-url"
-              >Image URL</label
-            >
+            <label class="upload__label" for="image-url">Image URL</label>
             <input
               required
               type="text"
               name="image-url"
               id="image-url"
-              class="upload__input--col-1"
+              class="upload__input"
               placeholder="Image URL"
             />
 
-            <label class="upload__label--col-1" for="publisher"
-              >Publisher</label
-            >
+            <label class="upload__label" for="publisher">Publisher</label>
             <input
               required
               type="text"
               name="publisher"
               id="publisher"
-              class="upload__input--col-1"
+              class="upload__input"
               placeholder="Publisher"
             />
 
-            <label class="upload__label--col-1" for="prep-time"
-              >Prep Time</label
-            >
+            <label class="upload__label" for="prep-time">Prep Time</label>
             <input
               required
               type="text"
               name="prep-time"
               id="prep-time"
-              class="upload__input--col-1"
+              class="upload__input"
               placeholder="Preperation Time"
             />
 
-            <label class="upload__label--col-1" for="servings">Servings</label>
+            <label class="upload__label" for="servings">Servings</label>
             <input
               required
               type="text"
               name="servings"
               id="servings"
-              class="upload__input--col-1"
+              class="upload__input"
               placeholder="Servings"
             />
           </div>
@@ -309,7 +343,7 @@
               id="ing-1"
               name="ing-1"
               class="upload__input"
-              placeholder="ing 1"
+              placeholder="Ingredient 1"
             />
 
             <label for="ing-2" class="upload__label"></label>
@@ -319,7 +353,7 @@
               id="ing-2"
               name="ing-2"
               class="upload__input"
-              placeholder="ing 2"
+              placeholder="Ingredient 2"
             />
 
             <label for="ing-3" class="upload__label"></label>
@@ -329,7 +363,7 @@
               id="ing-3"
               name="ing-3"
               class="upload__input"
-              placeholder="ing 3"
+              placeholder="Ingredient 3"
             />
 
             <label for="ing-4" class="upload__label"></label>
@@ -338,7 +372,7 @@
               id="ing-4"
               name="ing-4"
               class="upload__input"
-              placeholder="ing 4"
+              placeholder="Ingredient 4"
             />
 
             <label for="ing-5" class="upload__label"></label>
@@ -347,7 +381,7 @@
               id="ing-5"
               name="ing-5"
               class="upload__input"
-              placeholder="ing 5"
+              placeholder="Ingredient 5"
             />
 
             <label for="ing-6" class="upload__label"></label>
@@ -356,7 +390,7 @@
               id="ing-6"
               name="ing-6"
               class="upload__input"
-              placeholder="ing 6"
+              placeholder="Ingredient 6"
             />
           </div>
 
@@ -371,7 +405,7 @@
               id="unit-1"
               name="unit-1"
               class="upload__input"
-              placeholder="unit 1"
+              placeholder="Unit 1"
             />
 
             <label for="unit-2" class="upload__label"></label>
@@ -381,7 +415,7 @@
               id="unit-2"
               name="unit-2"
               class="upload__input"
-              placeholder="unit 2"
+              placeholder="Unit 2"
             />
 
             <label for="unit-3" class="upload__label"></label>
@@ -391,7 +425,7 @@
               id="unit-3"
               name="unit-3"
               class="upload__input"
-              placeholder="unit 3"
+              placeholder="Unit 3"
             />
 
             <label for="unit-4" class="upload__label"></label>
@@ -400,7 +434,7 @@
               id="unit-4"
               name="unit-4"
               class="upload__input"
-              placeholder="unit 4"
+              placeholder="Unit 4"
             />
 
             <label for="unit-5" class="upload__label"></label>
@@ -409,7 +443,7 @@
               id="unit-5"
               name="unit-5"
               class="upload__input"
-              placeholder="unit 5"
+              placeholder="Unit 5"
             />
 
             <label for="unit-6" class="upload__label"></label>
@@ -418,7 +452,7 @@
               id="unit-6"
               name="unit-6"
               class="upload__input"
-              placeholder="unit 6"
+              placeholder="Unit 6"
             />
           </div>
 
@@ -433,7 +467,7 @@
               id="desc-1"
               name="desc-1"
               class="upload__input"
-              placeholder="desc 1"
+              placeholder="Description 1"
             />
 
             <label for="desc-2" class="upload__label"></label>
@@ -443,7 +477,7 @@
               id="desc-2"
               name="desc-2"
               class="upload__input"
-              placeholder="desc 2"
+              placeholder="Description 2"
             />
 
             <label for="desc-3" class="upload__label"></label>
@@ -453,7 +487,7 @@
               id="desc-3"
               name="desc-3"
               class="upload__input"
-              placeholder="desc 3"
+              placeholder="Description 3"
             />
 
             <label for="desc-4" class="upload__label"></label>
@@ -462,7 +496,7 @@
               id="desc-4"
               name="desc-4"
               class="upload__input"
-              placeholder="desc 4"
+              placeholder="Description 4"
             />
 
             <label for="desc-5" class="upload__label"></label>
@@ -471,7 +505,7 @@
               id="desc-5"
               name="desc-5"
               class="upload__input"
-              placeholder="desc 5"
+              placeholder="Description 5"
             />
 
             <label for="desc-6" class="upload__label"></label>
@@ -480,9 +514,10 @@
               id="desc-6"
               name="desc-6"
               class="upload__input"
-              placeholder="desc 6"
+              placeholder="Description 6"
             />
           </div>
+          <button class="btn upload__btn--form">Submit</button>
         </form>
       </div>
     </div>

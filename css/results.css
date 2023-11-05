@@ -65,11 +65,84 @@
 .search__heading {
   font-family: "Cormorant Garamond", serif;
   font-weight: 500;
-  font-size: 2rem;
+  font-size: 2.2rem;
 }
 
 .search__subheading {
   display: block;
   font-size: 1.4rem;
   font-weight: 300;
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////// */
+.bookmark__item {
+  display: flex;
+  align-items: center;
+
+  gap: 1.2rem;
+  padding: 1.2rem;
+
+  width: 25rem;
+  height: 8rem;
+
+  transition: all 0.2s;
+}
+
+.bookmark__item:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.bookmark__item::after {
+  content: "";
+  position: absolute;
+  bottom: -1.2rem;
+  left: 50%;
+  width: 15rem;
+  height: 1px;
+  background: var(--color-secondary-lighter);
+  transform: translateX(-50%);
+}
+
+.bookmark__img {
+  width: 5rem;
+  height: 5rem;
+}
+
+.bookmark__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+/* .bookmark__link {
+} */
+
+.bookmark__heading {
+  font-family: "Cormorant, Garamond", serif;
+
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.bookmark__subheading {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+/* .bookmark__btn {
+  background-color: var(--color-primary);
+  border: none;
+  cursor: pointer;
+}
+.bookmark__btn:hover {
+  fill: var(--color-secondary-lighter);
+} */
+
+.bookmark__icon {
+  font-size: 2rem;
+}
+
+.bookmark__icon:hover {
+  /* color: var(--color-secondary); */
+  fill: var(--color-secondary);
 }

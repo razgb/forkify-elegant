@@ -2,6 +2,8 @@
 /* @import "~@flaticon/flaticon-uicons/css/regular/straight.css"; */
 @import url("https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-straight/css/uicons-regular-straight.css");
 @import url("https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css");
+@import url("https://cdn-uicons.flaticon.com/2.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css");
+
 :root {
   --color-primary: #fffaf0;
   --color-primary-hover: rgb(247, 238, 222);
@@ -15,7 +17,19 @@
   --background-darker: rgb(22, 11, 1);
   /* --color-text: #190d01; */
 
-  --gradient: linear-gradient(to bottom right, rgb(93, 45, 4), rgb(30, 15, 2));
+  --gradient: linear-gradient(
+    to bottom right,
+    rgb(86, 42, 3),
+    rgb(59, 29, 3),
+    rgb(46, 23, 3)
+  );
+
+  --gradient-one: linear-gradient(
+    to bottom right,
+    rgb(84, 46, 14),
+    rgb(74, 40, 10),
+    rgb(59, 31, 6)
+  );
 }
 
 * {
@@ -31,15 +45,13 @@ html {
 
 body {
   font-family: "Source Sans 3", sans-serif;
-  background: var(--gradient);
   height: 100%;
 }
 
 /* .container {
 } */
-
+/* 
 .overlay {
-  /* for chrome */
   -webkit-backdrop-filter: blur(4px);
 
   backdrop-filter: blur(4px);
@@ -51,7 +63,23 @@ body {
   position: fixed;
   top: 0;
   left: 0;
+} */
+
+.hidden {
+  display: none;
 }
+
+.background-layer {
+  position: fixed; /* Stays even when scrolling */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: var(--gradient-one);
+  z-index: -100; /* Ensure it stays behind other content */
+}
+
+/* //////////////////////////////////////////////////////////////// */
 
 .main {
   max-width: 120rem;
@@ -62,9 +90,6 @@ body {
 
 .results-recipe-box {
   display: flex;
-  /* gap: 4.8rem; */
-  /* padding: 3.2rem; */
-  /* align-items: center; */
 }
 
 .header {
@@ -89,6 +114,7 @@ body {
   color: var(--color-primary);
 
   border: 2px solid transparent;
+  border-radius: 0.4rem;
   cursor: pointer;
   transition: all 0.2s ease;
 }

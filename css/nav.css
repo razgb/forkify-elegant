@@ -30,6 +30,7 @@
   width: 40rem;
   padding: 15px;
   border: 1px solid var(--color-secondary);
+  background-color: #fff;
 
   border-top-left-radius: 0.4rem;
   border-bottom-left-radius: 0.4rem;
@@ -40,8 +41,7 @@
 }
 
 .btnForm {
-  border-top-right-radius: 0.4rem;
-  border-bottom-right-radius: 0.4rem;
+  border-radius: 0 0.4rem 0.4rem 0;
 }
 
 .nav {

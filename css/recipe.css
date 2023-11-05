@@ -3,7 +3,7 @@
   gap: 1.2rem;
   padding: 2.4rem;
 
-  border-left: 1rem solid rgb(93, 45, 4);
+  border-left: 1rem solid rgb(86, 42, 3);
 }
 
 .recipe__figure {
@@ -43,13 +43,6 @@
   gap: 4.8rem;
 }
 
-.recipe__details {
-  height: 4rem;
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-}
-
 .recipe__img {
   /* Both divisible by 16 and 9 respectively. */
   /* width: 64rem;
@@ -77,23 +70,40 @@
   left: 0;
 }
 
+.recipe__details {
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
 .recipe__icon {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   color: var(--color-secondary-lighter);
+  transform: translateY(0.2rem);
 }
 
-/* Plus and Minus icons */
-.serving__icon:hover {
-  transform: translateY(-0.5rem);
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
+/* This is the  */
 .recipe__info {
   display: block;
   font-size: 2rem;
   font-weight: 300;
-  height: 100%;
+}
+
+.change-serving-container {
+  transform: translateY(0.2rem);
+}
+
+/* Plus and Minus icons */
+.serving__icon {
+  background-color: var(--color-primary);
+  border: none;
+}
+
+.serving__icon:hover {
+  transform: translateY(-0.1rem);
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 /* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
