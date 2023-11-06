@@ -1,5 +1,7 @@
 .search-results {
   min-width: 40rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .results {
@@ -18,7 +20,6 @@
   align-items: center;
   gap: 2.4rem;
 
-  /* border: 1px solid var(--color-secondary); */
   padding: 1.2rem;
   height: 12.4rem;
 
@@ -54,16 +55,24 @@
   /* object-fit: cover; */
 }
 
+.search__link {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+
+  width: 100%;
+  height: 100%;
+
+  text-decoration: none;
+  color: var(--color-text);
+}
+
 .search__content {
   display: flex;
   flex-direction: column;
-  align-items: start;
   justify-content: center;
-  width: 30rem;
+  gap: 0.6rem;
 }
-
-/* .search__link {
-} */
 
 .search__heading {
   font-family: "Cormorant Garamond", serif;
@@ -75,6 +84,33 @@
   display: block;
   font-size: 1.4rem;
   font-weight: 300;
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/* PAGINATION */
+
+.search__pagination {
+  margin-top: auto;
+
+  display: flex;
+  justify-content: space-between;
+  padding: 2.4rem 2.4rem;
+}
+
+.search__pagination--btn {
+  padding: 0.9rem 1.8rem;
+
+  font-size: 1.6rem;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.search__pagination--btn:hover {
+  background-color: var(--color-secondary-hover);
 }
 
 /* ///////////////////////////////////////////////////////////////////////////////////////////////////////// */
@@ -132,24 +168,14 @@
   font-weight: 300;
 }
 
-/* .bookmark__btn {
-  
-  position: relative;
-  color: var(--color-secondary-lightest);
-  background: none;
-  border: none;
-
-  cursor: pointer;
-  z-index: 100;
-} */
-
 .bookmark__icon {
-  color: #cbc8c1;
+  font-size: 3.6rem;
+  color: #cbc8c1ae;
   border: var(--color-secondary);
   transition: all 0.2s;
+  cursor: pointer;
 }
 
-.bookmark__icon:hover {
+.bookmark__icon--active {
   color: var(--color-secondary);
-  cursor: pointer;
 }

@@ -71,62 +71,17 @@
           <div class="search-results">
             <ul class="results">
               <li class="search__item">
-                <img
-                  src="images/apple-crumble.avif"
-                  alt=""
-                  class="search__img"
-                />
-                <div class="search__content">
-                  <a href="" class="search__link"></a>
-                  <h3 class="search__heading">Apple Crumble</h3>
-                  <span class="search__subheading">BBC food</span>
-                </div>
-              </li>
-
-              <li class="search__item">
-                <img src="images/pizza.jpg" alt="" class="search__img" />
-                <div class="search__content">
-                  <a href="" class="search__link"></a>
-                  <h3 class="search__heading">Italian Pizza</h3>
-                  <span class="search__subheading">Mum's Pizeria</span>
-                </div>
-              </li>
-
-              <li class="search__item">
-                <img
-                  src="images/apple-crumble.avif"
-                  alt=""
-                  class="search__img"
-                />
-                <div class="search__content">
-                  <a href="" class="search__link"></a>
-                  <h3 class="search__heading">Apple Crumble</h3>
-                  <span class="search__subheading">BBC food</span>
-                </div>
-              </li>
-              <li class="search__item">
-                <img
-                  src="images/apple-crumble.avif"
-                  alt=""
-                  class="search__img"
-                />
-                <div class="search__content">
-                  <a href="" class="search__link"></a>
-                  <h3 class="search__heading">Apple Crumble</h3>
-                  <span class="search__subheading">BBC food</span>
-                </div>
-              </li>
-              <li class="search__item">
-                <img
-                  src="images/apple-crumble.avif"
-                  alt=""
-                  class="search__img"
-                />
-                <div class="search__content">
-                  <a href="" class="search__link"></a>
-                  <h3 class="search__heading">Apple Crumble</h3>
-                  <span class="search__subheading">BBC food</span>
-                </div>
+                <a href="" class="search__link">
+                  <img
+                    src="images/apple-crumble.avif"
+                    alt=""
+                    class="search__img"
+                  />
+                  <div class="search__content">
+                    <h3 class="search__heading">Apple Crumble</h3>
+                    <span class="search__subheading">BBC food</span>
+                  </div>
+                </a>
               </li>
 
               <!-- <li class="bookmark__item">
@@ -142,11 +97,29 @@
                 </div>
               </li> -->
             </ul>
+            <div class="search__pagination">
+              <button
+                class="search__pagination--btn search__pagination--btn-left"
+              >
+                &larr; Page 1
+              </button>
+              <button
+                class="search__pagination--btn search__pagination--btn-right"
+              >
+                Page 2 &rarr;
+              </button>
+            </div>
           </div>
 
           <div class="recipe">
             <section class="recipe__figure">
-              <img class="recipe__img" src="images/apple-crumble.avif" alt="" />
+              <div class="recipe__img--container">
+                <img
+                  class="recipe__img"
+                  src="images/apple-crumble.avif"
+                  alt=""
+                />
+              </div>
               <h3 class="recipe__heading">Apple Crumble</h3>
 
               <div class="recipe__detail--container">
@@ -175,7 +148,12 @@
                   </div>
                 </div>
 
-                <span class="bookmark__icon material-icons"> bookmark </span>
+                <span
+                  class="bookmark__icon material-icons"
+                  style="font-size: 36px"
+                >
+                  bookmark
+                </span>
               </div>
             </section>
 

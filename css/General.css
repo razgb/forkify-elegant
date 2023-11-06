@@ -16,7 +16,8 @@
 
   --background: rgba(22, 11, 1, 0.897);
   --background-darker: rgb(22, 11, 1);
-  /* --color-text: #190d01; */
+  --color-text: #190d01;
+  --color-text: #190d01;
 
   --gradient: linear-gradient(
     to bottom right,
@@ -47,6 +48,7 @@ html {
 body {
   font-family: "Source Sans 3", sans-serif;
   height: 100%;
+  color: var(--color-text);
 }
 
 /* .container {

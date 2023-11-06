@@ -51,8 +51,6 @@
 }
 
 .nav__icon {
-  /* width: 2.4rem;
-  height: 2.4rem; */
   font-size: 2rem;
   color: var(--color-secondary-lighter);
 }
