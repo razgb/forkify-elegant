@@ -8,6 +8,9 @@
   flex-direction: column;
   gap: 2.4rem;
   padding-block: 2.4rem;
+
+  /* Temp: change to scroll if it doesn't work. */
+  overflow: auto;
 }
 
 .search__item {
@@ -130,19 +133,23 @@
 }
 
 /* .bookmark__btn {
-  background-color: var(--color-primary);
+  
+  position: relative;
+  color: var(--color-secondary-lightest);
+  background: none;
   border: none;
+
   cursor: pointer;
-}
-.bookmark__btn:hover {
-  fill: var(--color-secondary-lighter);
+  z-index: 100;
 } */
 
 .bookmark__icon {
-  font-size: 2rem;
+  color: #cbc8c1;
+  border: var(--color-secondary);
+  transition: all 0.2s;
 }
 
 .bookmark__icon:hover {
-  /* color: var(--color-secondary); */
-  fill: var(--color-secondary);
+  color: var(--color-secondary);
+  cursor: pointer;
 }
