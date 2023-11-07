@@ -1,22 +1,24 @@
-import View from './View.js';
-import icons from 'url:../../img/icons.svg';
-import * as fracty from 'fracty/fracty.js';
+import View from "./View.js";
+import icons from "url:../../img/icons.svg";
+import * as fracty from "fracty/fracty.js";
 
 // THIS IS THE PARENT CLASS.
 class RecipeView extends View {
-  _parentElement = document.querySelector('.recipe');
-  _errorMessage = 'We could not find that recipe. Please try another one.';
-  _successMessage = '';
+  _parentElement = document.querySelector(".recipe");
+  _errorMessage = "We could not find that recipe. Please try another one.";
+  _successMessage = "";
 
   // PUBLISHER function that executes another function. (controlRecipes)
   addHandlerRender(handler) {
-    ['hashchange', 'load'].forEach(ev => window.addEventListener(ev, handler));
+    ["hashchange", "load"].forEach((ev) =>
+      window.addEventListener(ev, handler)
+    );
   }
 
   // DYNAMICALLY CHANGES THE NUMBERS RELATED TO SERVINGS WITH -/+.
   addHandlerUpdateServings(handler) {
-    this._parentElement.addEventListener('click', function (e) {
-      const btn = e.target.closest('.btn--update-servings');
+    this._parentElement.addEventListener("click", function (e) {
+      const btn = e.target.closest(".btn--update-servings");
       if (!btn) return;
       const updateTo = +btn.dataset.updateTo; // datasets are strings.
       if (updateTo > 0) handler(updateTo); // we cannot have 0 servings.
@@ -24,8 +26,8 @@ class RecipeView extends View {
   }
 
   addHandlerAddBookmark(handler) {
-    this._parentElement.addEventListener('click', function (e) {
-      const btn = e.target.closest('.btn--bookmark');
+    this._parentElement.addEventListener("click", function (e) {
+      const btn = e.target.closest(".btn--bookmark");
       if (!btn) return;
       handler();
     });
@@ -78,7 +80,7 @@ class RecipeView extends View {
             </div>
           </div>
 
-          <div class="recipe__user-generated ${this._data.key ? '' : 'hidden'}">
+          <div class="recipe__user-generated ${this._data.key ? "" : "hidden"}">
             <svg>
               <use href="${icons}#icon-user"></use>
             </svg>
@@ -86,7 +88,7 @@ class RecipeView extends View {
           <button class="btn--round btn--bookmark">
             <svg class="">
               <use href="${icons}#icon-bookmark${
-      this._data.bookmarked ? '-fill' : ''
+      this._data.bookmarked ? "-fill" : ""
     }"></use>
             </svg>
           </button>
@@ -97,7 +99,7 @@ class RecipeView extends View {
           <ul class="recipe__ingredient-list">
             ${this._data.ingredients
               .map(this._generateMarkupIngredient)
-              .join('')}
+              .join("")}
           </ul>
         </div>
 
@@ -124,21 +126,90 @@ class RecipeView extends View {
     `;
   }
 
+  _generateMarkup2() {
+    return `
+    <section class="recipe__section">
+      <div class="recipe__img--container">
+        <img
+          class="recipe__img"
+          src="${this.data.image}"
+          alt=""
+        />
+      </div>
+      <h3 class="recipe__heading">${this.data.title}</h3>
+
+      <div class="recipe__detail--container">
+        <div class="recipe__details">
+          <i class="recipe__icon fi fi-rr-alarm-clock"></i>
+
+          <span class="recipe__info"
+            ><strong class="ingredient__highlight">${
+              this.data.cookingTime
+            }</strong> Minutes
+          </span>
+        </div>
+
+        <div class="recipe__details">
+          <i class="recipe__icon fi fi-rs-users"></i>
+          <span class="recipe__info"
+            ><strong class="ingredient__highlight">${
+              this.data.servings
+            }</strong>
+            Servings</span
+          >
+
+          <div class="change-serving-container">
+            <button class="serving__icon">
+              <i class="recipe__icon fi fi-rr-minus-circle"></i>
+            </button>
+            <button class="serving__icon">
+              <i class="recipe__icon fi fi-rs-add"></i>
+            </button>
+          </div>
+        </div>
+
+        <span
+          class="bookmark__icon material-icons"
+          style="font-size: 36px"
+        >
+          bookmark
+        </span>
+      </div>
+    </section>
+
+    <section class="recipe__ingredients">
+      <h3 class="ingredients__heading">Recipe Ingredients</h3>
+      <ul class="recipe__ingredients--list">
+      ${this.data.ingredients.map(this._generateMarkupIngredient).join("")}
+      </ul>
+    </section>
+
+    <section class="recipe__directions">
+      <h3 class="recipe__directions--heading">How to cook it</h3>
+      <span class="recipe__directions--text"
+        >This recipe was carefully designed and tested by
+        <strong>BBC Food</strong>. <br />
+        Please check out directions at their website.</span
+      >
+      <button class="btn recipe__directions--btn">
+        Author's website
+      </button>
+    </section>
+    `;
+  }
+
   _generateMarkupIngredient(ing) {
     return `
-          <li class="recipe__ingredient">
-            <svg class="recipe__icon">
-              <use href="${icons}#icon-check"></use>
-            </svg>
-            <div class="recipe__quantity">${
-              ing.quantity ? fracty(ing.quantity).toString() : ''
-            }</div>
-            <div class="recipe__description">
-              <span class="recipe__unit">${ing.unit}</span>
-              ${ing.description}
-            </div>
-          </li>
-            `;
+      <li class="recipe__ingredient">
+        <i class="recipe__icon fi fi-rs-check"></i>
+        <div>
+          <strong class="ingredient__highlight">${
+            ing.quantity ? fracty(ing.quantity).toString() : ""
+          }</strong> ${ing.unit}
+          ${ing.description}
+        </div>
+      </li>
+    `;
   }
 }
 

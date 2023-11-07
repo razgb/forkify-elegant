@@ -1,14 +1,14 @@
-import * as model from './model.js';
-import { MODAL_CLOSE_SEC } from './config.js';
-import recipeView from './views/recipeView.js';
-import searchView from './views/searchView.js';
-import resultsView from './views/resultsView.js';
-import paginationView from './views/paginationView.js';
-import bookmarksView from './views/bookmarksView.js';
-import addRecipeView from './views/addRecipeView.js';
+import * as model from "./model.js";
+import { MODAL_CLOSE_SEC } from "./config.js";
+import recipeView from "./views/recipeView.js";
+import searchView from "./views/searchView.js";
+import resultsView from "./views/resultsView.js";
+import paginationView from "./views/paginationView.js";
+import bookmarksView from "./views/bookmarksView.js";
+import addRecipeView from "./views/addRecipeView.js";
 
-import 'core-js/stable';
-import 'regenerator-runtime/runtime';
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 
 // KEY: 6346fc4a-d3d9-4eaa-a308-317e7621c533
 
@@ -18,6 +18,7 @@ import 'regenerator-runtime/runtime';
 
 // DYNAMICALLY REQUESTS URL FROM WEBSITE AND DISPLAYS ENTIRE DATA.
 const controlRecipes = async function () {
+  // Anchors change the hash of the page.
   try {
     const id = window.location.hash.slice(1); // removes the hash character from the ID. (e.g. everything after the hash of something.com/#489q73049w87340w39874)
 
@@ -112,7 +113,7 @@ const controlAddRecipe = async function (newRecipe) {
     bookmarksView.render(model.state.bookmarks); // New element inserted, so update does not work.
 
     // Change ID in URL.
-    window.history.pushState(null, '', `#${model.state.recipe.id}`);
+    window.history.pushState(null, "", `#${model.state.recipe.id}`);
 
     // Close form window.
 
@@ -124,7 +125,7 @@ const controlAddRecipe = async function (newRecipe) {
       addRecipeView.render();
     }, 2000 * MODAL_CLOSE_SEC);
   } catch (err) {
-    console.error('❌', err);
+    console.error("❌", err);
     addRecipeView.renderError(err.message);
   }
 };

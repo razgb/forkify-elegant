@@ -6,7 +6,7 @@
   border-left: 1rem solid rgb(86, 42, 3);
 }
 
-.recipe__figure {
+.recipe__section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -67,10 +67,6 @@
   object-fit: cover;
   border-radius: 0.4rem;
 }
-
-/* .recipe__img::before {
-  
-} */
 
 .recipe__details {
   height: 4rem;
