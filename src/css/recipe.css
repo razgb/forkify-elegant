@@ -75,12 +75,6 @@
   gap: 1.2rem;
 }
 
-.recipe__icon {
-  font-size: 1.8rem;
-  color: var(--color-secondary-lighter);
-  transform: translateY(0.2rem);
-}
-
 /* This is the  */
 .recipe__info {
   display: block;
@@ -178,4 +172,9 @@
 
 .recipe__directions--btn {
   padding: 1.2rem 3.6rem;
+}
+
+.recipe__directions--btn {
+  color: var(--color-primary);
+  text-decoration: none;
 }

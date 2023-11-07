@@ -159,10 +159,14 @@ class RecipeView extends View {
           >
 
           <div class="change-serving-container">
-            <button class="serving__icon">
-              <i class="recipe__icon fi fi-rr-minus-circle"></i>
+            <button class="serving__icon" data-update-to ="${
+              this._data.servings - 1
+            }">
+              <i class="recipe__icon fi fi-rr-minus-circle" ></i>
             </button>
-            <button class="serving__icon">
+            <button class="serving__icon" data-update-to ="${
+              this._data.servings + 1
+            }">
               <i class="recipe__icon fi fi-rs-add"></i>
             </button>
           </div>

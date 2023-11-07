@@ -34,6 +34,11 @@
   );
 }
 
+::selection {
+  background: #f5f2d0;
+  color: var(--color-text);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -124,6 +129,12 @@ body {
 
 .btn:hover {
   background-color: var(--color-secondary-hover);
+}
+
+.icon {
+  font-size: 1.8rem;
+  color: var(--color-secondary-lighter);
+  transform: translateY(0.2rem);
 }
 
 /* Spinner */
