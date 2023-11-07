@@ -1,5 +1,4 @@
 import View from "./View.js";
-import icons from "url:../../img/icons.svg";
 import * as fracty from "fracty/fracty.js";
 
 // THIS IS THE PARENT CLASS.
@@ -18,7 +17,7 @@ class RecipeView extends View {
   // DYNAMICALLY CHANGES THE NUMBERS RELATED TO SERVINGS WITH -/+.
   addHandlerUpdateServings(handler) {
     this._parentElement.addEventListener("click", function (e) {
-      const btn = e.target.closest(".btn--update-servings");
+      const btn = e.target.closest(".serving__icon");
       if (!btn) return;
       const updateTo = +btn.dataset.updateTo; // datasets are strings.
       if (updateTo > 0) handler(updateTo); // we cannot have 0 servings.
@@ -27,7 +26,7 @@ class RecipeView extends View {
 
   addHandlerAddBookmark(handler) {
     this._parentElement.addEventListener("click", function (e) {
-      const btn = e.target.closest(".btn--bookmark");
+      const btn = e.target.closest(".serving__icon");
       if (!btn) return;
       handler();
     });
@@ -195,9 +194,9 @@ class RecipeView extends View {
         <strong>BBC Food</strong>. <br />
         Please check out directions at their website.</span
       >
-      <button class="btn recipe__directions--btn">
+      <a href="" class="btn recipe__directions--btn">
         Author's website
-      </button>
+      </a>
     </section>
     `;
   }

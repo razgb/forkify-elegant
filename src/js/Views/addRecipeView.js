@@ -1,14 +1,13 @@
-import icons from 'url:../../img/icons.svg';
-import View from './View.js';
+import View from "./View.js";
 
 class AddRecipeView extends View {
-  _parentElement = document.querySelector('.upload');
-  _successMessage = 'Recipe was successfully uploaded!';
+  _parentElement = document.querySelector(".upload");
+  _successMessage = "Recipe was successfully uploaded!";
 
-  _window = document.querySelector('.add-recipe-window');
-  _overlay = document.querySelector('.overlay');
-  _btnOpen = document.querySelector('.nav__btn--add-recipe');
-  _btnClose = document.querySelector('.btn--close-modal');
+  _window = document.querySelector(".add-recipe-window");
+  _overlay = document.querySelector(".overlay");
+  _btnOpen = document.querySelector(".nav__btn--add-recipe");
+  _btnClose = document.querySelector(".btn--close-modal");
 
   constructor() {
     super();
@@ -17,21 +16,21 @@ class AddRecipeView extends View {
   }
 
   toggleWindow() {
-    this._overlay.classList.toggle('hidden');
-    this._window.classList.toggle('hidden');
+    this._overlay.classList.toggle("hidden");
+    this._window.classList.toggle("hidden");
   }
 
   _addHandlerShowWindow() {
-    this._btnOpen.addEventListener('click', this.toggleWindow.bind(this)); // this keyword in event listeners point to the element.
+    this._btnOpen.addEventListener("click", this.toggleWindow.bind(this)); // this keyword in event listeners point to the element.
   }
 
   _addHandlerHideWindow() {
-    this._btnClose.addEventListener('click', this.toggleWindow.bind(this)); // this keyword in event listeners point to the element.
-    this._overlay.addEventListener('click', this.toggleWindow.bind(this)); // this keyword in event listeners point to the element.
+    this._btnClose.addEventListener("click", this.toggleWindow.bind(this)); // this keyword in event listeners point to the element.
+    this._overlay.addEventListener("click", this.toggleWindow.bind(this)); // this keyword in event listeners point to the element.
   }
 
   addHandlerUpload(handler) {
-    this._parentElement.addEventListener('submit', function (e) {
+    this._parentElement.addEventListener("submit", function (e) {
       e.preventDefault();
 
       const dataArr = [...new FormData(this)]; // (this) we are in a handler function. ARRAY OF ARRAYS OF KEY VALUE PAIRS
@@ -111,7 +110,7 @@ class AddRecipeView extends View {
     `;
     // document.querySelector('.container').insertAdjacentHTML('afterend', markup);
     // this.toggleWindow();
-    this._parentElement.insertAdjacentHTML('afterbegin', markup);
+    this._parentElement.insertAdjacentHTML("afterbegin", markup);
   }
 
   // _generateMarkup() {}

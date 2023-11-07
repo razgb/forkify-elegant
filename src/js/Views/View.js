@@ -1,5 +1,4 @@
 // THIS IS A PARENT CLASS FOR ALL THE VIEWS SO THAT THEY SHARE THE SAME METHODS.
-import icons from "url:../../img/icons.svg";
 
 export default class View {
   _data;
