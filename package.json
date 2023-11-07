@@ -1,0 +1,15 @@
+{
+  "name": "netlify-elegant",
+  "version": "1.0.0",
+  "description": "",
+  "default": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html"
+  },
+  "keywords": [],
+  "author": "Raz N",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.10.2"
+  }
+}
