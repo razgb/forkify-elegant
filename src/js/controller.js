@@ -1,14 +1,17 @@
 import * as model from "./model.js";
 import { MODAL_CLOSE_SEC } from "./config.js";
 import recipeView from "./views/recipeView.js";
-import searchView from "./views/searchView.js";
-import resultsView from "./views/resultsView.js";
-import paginationView from "./views/paginationView.js";
-import bookmarksView from "./views/bookmarksView.js";
-import addRecipeView from "./views/addRecipeView.js";
+// import searchView from "src/views/searchView.js";
+// import resultsView from "src/views/resultsView.js";
+// import paginationView from "src/views/paginationView.js";
+// import bookmarksView from "src/views/bookmarksView.js";
+// import addRecipeView from "src/views/addRecipeView.js";
 
 import "core-js/stable";
 import "regenerator-runtime/runtime";
+
+// import "../../node_modules/core-js/stable";
+// import "../../node_modules/regenerator-runtime/runtime.js";
 
 // KEY: 6346fc4a-d3d9-4eaa-a308-317e7621c533
 
@@ -16,6 +19,7 @@ import "regenerator-runtime/runtime";
 //   module.hot.accept();
 // }
 
+console.log("hjoi");
 // DYNAMICALLY REQUESTS URL FROM WEBSITE AND DISPLAYS ENTIRE DATA.
 const controlRecipes = async function () {
   // Anchors change the hash of the page.
@@ -39,6 +43,8 @@ const controlRecipes = async function () {
     recipeView.renderError();
   }
 };
+
+/* 
 
 const controlSearchResult = async function () {
   try {
@@ -129,17 +135,17 @@ const controlAddRecipe = async function (newRecipe) {
     addRecipeView.renderError(err.message);
   }
 };
-
+*/
 ///////////////////////////////////////////////////////////////////////////////
 
 const init = function () {
-  bookmarksView.addHandlerRender(controlBookmarks); // First renders the bookmarks received from localstorage.
-  searchView.addHandlerSearch(controlSearchResult);
+  // bookmarksView.addHandlerRender(controlBookmarks); // First renders the bookmarks received from localstorage.
+  // searchView.addHandlerSearch(controlSearchResult);
   recipeView.addHandlerRender(controlRecipes); // Subscriber function that calls a func from the view and passes in a func to run.
-  recipeView.addHandlerUpdateServings(controlServings);
-  recipeView.addHandlerAddBookmark(controlAddBookmark);
-  paginationView.addHandlerClick(controlPagination);
-  addRecipeView.addHandlerUpload(controlAddRecipe);
+  // recipeView.addHandlerUpdateServings(controlServings);
+  // recipeView.addHandlerAddBookmark(controlAddBookmark);
+  // paginationView.addHandlerClick(controlPagination);
+  // addRecipeView.addHandlerUpload(controlAddRecipe);
 };
 
 init();

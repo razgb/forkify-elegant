@@ -26,7 +26,7 @@ export default class View {
   }
 
   // DYNAMICALLY UPDATES ANY ELEMENT THAT HAS CHANGED.
-
+  /*
   update(data) {
     // updated elements
     this._data = data;
@@ -61,7 +61,7 @@ export default class View {
       }
     });
   }
-
+*/
   // CLEARS DISPLAY PAGE.
   _clear() {
     this._parentElement.innerHTML = "";
@@ -78,6 +78,7 @@ export default class View {
     this._parentElement.insertAdjacentHTML("afterbegin", markup);
   }
 
+  /*
   renderError(message = this._errorMessage) {
     const markup = `
     <div class="error">
@@ -101,5 +102,5 @@ export default class View {
 
     this._clear();
     this._parentElement.insertAdjacentHTML("afterbegin", markup);
-  }
+  } */
 } // This is not an instance, it is the whole class.

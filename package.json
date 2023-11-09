@@ -4,12 +4,17 @@
   "description": "",
   "default": "index.js",
   "scripts": {
-    "start": "parcel src/index.html"
+    "start": "parcel index.html"
   },
   "keywords": [],
   "author": "Raz N",
   "license": "ISC",
   "devDependencies": {
     "parcel": "^2.10.2"
+  },
+  "dependencies": {
+    "core-js": "^3.33.2",
+    "fracty": "^1.0.11",
+    "regenerator-runtime": "^0.14.0"
   }
 }

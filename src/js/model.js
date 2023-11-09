@@ -1,13 +1,12 @@
-import { async } from 'regenerator-runtime';
-import { API_URL, RES_PER_PAGE, KEY } from './config';
+import { async } from "regenerator-runtime";
+import { API_URL, RES_PER_PAGE, KEY } from "./config";
 // import { getJSON, sendJSON } from './helpers';
-import { AJAX } from './helpers';
-import addRecipeView from './views/addRecipeView';
+import { AJAX } from "./helpers";
 
 export const state = {
   recipe: {},
   search: {
-    query: '',
+    query: "",
     results: [],
     page: 1,
     resultsPerPage: RES_PER_PAGE,
@@ -42,7 +41,7 @@ export const loadRecipe = async function (id) {
     // console.log(state.recipe);
 
     // Returns true if just one item matches the condition.
-    if (state.bookmarks.some(bookmark => bookmark.id === id))
+    if (state.bookmarks.some((bookmark) => bookmark.id === id))
       state.recipe.bookmarked = true;
     else state.recipe.bookmarked = false;
   } catch (err) {
@@ -50,13 +49,14 @@ export const loadRecipe = async function (id) {
   }
 };
 
+/*
 export const loadSearchResults = async function (query) {
   try {
     state.search.query = query;
 
     const data = await AJAX(`${API_URL}?search=${query}&key=${KEY}`);
 
-    state.search.results = data.data.recipes.map(recipe => {
+    state.search.results = data.data.recipes.map((recipe) => {
       return {
         id: recipe.id,
         title: recipe.title,
@@ -87,7 +87,7 @@ export const getSearchResultsPage = function (page = state.search.page) {
 
 // THIS IS NOT A PURE FUNCTION. MANIPULATES ORIGINAL VALUES OF SERVINGS.
 export const updateServings = function (newServings) {
-  state.recipe.ingredients.forEach(ing => {
+  state.recipe.ingredients.forEach((ing) => {
     ing.quantity = (ing.quantity * newServings) / state.recipe.servings;
     // newQt = oldQt * newServings / oldServings.
   });
@@ -96,7 +96,7 @@ export const updateServings = function (newServings) {
 };
 
 const persistBookmarks = function () {
-  localStorage.setItem('bookmarks', JSON.stringify(state.bookmarks));
+  localStorage.setItem("bookmarks", JSON.stringify(state.bookmarks));
 };
 
 export const addBookmark = function (recipe) {
@@ -116,7 +116,7 @@ export const deleteBookmark = function (id) {
   // PURPOSE: removes recipe from bookmarks array and then sets bookmarked to false.
 
   // Delete bookmark
-  const index = state.bookmarks.findIndex(el => el.id === id);
+  const index = state.bookmarks.findIndex((el) => el.id === id);
   state.bookmarks.splice(index, 1); // at index of const index and a span of 1 item.
 
   // mark current recipe as NOT bookmarked
@@ -126,7 +126,7 @@ export const deleteBookmark = function (id) {
 };
 
 const init = function () {
-  const storage = localStorage.getItem('bookmarks'); // storing in a var first incase it is undefined.
+  const storage = localStorage.getItem("bookmarks"); // storing in a var first incase it is undefined.
   if (storage) state.bookmarks = JSON.parse(storage); // JavaScript Object Notation into Object.
 };
 
@@ -134,7 +134,7 @@ init();
 
 // FOR DEVELOPMENT PURPOSES.
 const clearBookmarks = function () {
-  localStorage.clear('bookmarks');
+  localStorage.clear("bookmarks");
 };
 //
 
@@ -144,11 +144,11 @@ export const uploadRecipe = async function (newRecipe) {
   // console.log(Object.entries(newRecipe));
   try {
     const ingredients = Object.entries(newRecipe)
-      .filter(entry => entry[0].startsWith('ingredient') && entry[1] !== '')
-      .map(ing => {
-        const ingArr = ing[1].split(',').map(el => el.trim());
+      .filter((entry) => entry[0].startsWith("ingredient") && entry[1] !== "")
+      .map((ing) => {
+        const ingArr = ing[1].split(",").map((el) => el.trim());
 
-        if (ingArr.length !== 3) throw new Error('Wrong ingredient format!'); // propagates towards the controlAddRecipe function.
+        if (ingArr.length !== 3) throw new Error("Wrong ingredient format!"); // propagates towards the controlAddRecipe function.
         const [quantity, unit, description] = ingArr;
 
         // If there is a value in quan, return number of quan, else return null
@@ -174,3 +174,5 @@ export const uploadRecipe = async function (newRecipe) {
     throw err; // we are in an async function, the error above would be a rejected promise.
   }
 };
+
+*/
