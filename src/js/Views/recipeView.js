@@ -17,7 +17,7 @@ class RecipeView extends View {
   // DYNAMICALLY CHANGES THE NUMBERS RELATED TO SERVINGS WITH -/+.
   addHandlerUpdateServings(handler) {
     this._parentElement.addEventListener("click", function (e) {
-      const btn = e.target.closest(".btn--update-servings");
+      const btn = e.target.closest(".serving__icon");
       if (!btn) return;
       const updateTo = +btn.dataset.updateTo; // datasets are strings.
       if (updateTo > 0) handler(updateTo); // we cannot have 0 servings.
@@ -33,7 +33,104 @@ class RecipeView extends View {
   }
 
   // CREATES THE MARKUP HTML DYNAMICALLY FROM A RECIPE OBJECT.
+
   _generateMarkup() {
+    return `
+    <section class="recipe__section">
+      <div class="recipe__img--container">
+        <img
+          class="recipe__img"
+          src="${this._data.image}"
+          alt=""
+        />
+      </div>
+      <h3 class="recipe__heading">${this._data.title}</h3>
+
+      <div class="recipe__detail--container">
+        <div class="recipe__details">
+          <i class="icon fi fi-rr-alarm-clock"></i>
+
+          <span class="recipe__info"
+            ><strong class="ingredient__highlight">${
+              this._data.cookingTime
+            }</strong> Minutes
+          </span>
+        </div>
+
+        <div class="recipe__details">
+          <i class="icon fi fi-rs-users"></i>
+          <span class="recipe__info"
+            ><strong class="ingredient__highlight">${
+              this._data.servings
+            }</strong>
+            Servings</span
+          >
+
+          <div class="change-serving-container">
+            <button class="serving__icon" data-update-to ="${
+              this._data.servings - 1
+            }">
+              <i class="icon fi fi-rr-minus-circle"></i>
+            </button>
+
+            <button class="serving__icon" data-update-to ="${
+              this._data.servings + 1
+            }">
+              <i class="icon fi fi-rs-add"></i>
+            </button>
+          </div>
+        </div>
+
+        <span
+          class="bookmark__icon${
+            this._data.bookmarked ? "--active" : ""
+          } material-icons"
+          style="font-size: 36px"
+        >
+          bookmark
+        </span>
+      </div>
+    </section>
+
+    <section class="recipe__ingredients">
+      <h3 class="ingredients__heading">Recipe Ingredients</h3>
+      <ul class="recipe__ingredients--list">
+        ${this._data.ingredients.map(this._generateMarkupIngredient).join("")}
+
+      </ul>
+    </section>
+
+    <section class="recipe__directions">
+      <h3 class="recipe__directions--heading">How to cook it</h3>
+      <span class="recipe__directions--text"
+        >This recipe was carefully designed and tested by
+        <strong>${this._data.publisher}</strong>. <br />
+        Please check out directions at their website.</span
+      >
+      <a href="${
+        this._data.sourceUrl
+      }" target="_blank" class="btn recipe__directions--btn">
+        Author's website
+      </a>
+    </section>
+    `;
+  }
+
+  _generateMarkupIngredient(ing) {
+    return `
+    <li class="recipe__ingredient">
+      <i class="icon fi fi-rs-check"></i>
+      <div>
+        <strong class="ingredient__highlight">${
+          ing.quantity ? fracty(ing.quantity).toString() : ""
+        }</strong> ${ing.unit}
+        <span> ${ing.unit} ${ing.description}</span>
+      </div>
+    </li>
+    `;
+  }
+
+  _generateMarkupOriginal() {
     return `
         <figure class="recipe__fig">
           <img src="${this._data.image}" alt="${
@@ -123,23 +220,6 @@ class RecipeView extends View {
           </a>
         </div>
     `;
-  }
-
-  _generateMarkupIngredient(ing) {
-    return `
-          <li class="recipe__ingredient">
-            <svg class="recipe__icon">
-              <use href="${icons}#icon-check"></use>
-            </svg>
-            <div class="recipe__quantity">${
-              ing.quantity ? fracty(ing.quantity).toString() : ""
-            }</div>
-            <div class="recipe__description">
-              <span class="recipe__unit">${ing.unit}</span>
-              ${ing.description}
-            </div>
-          </li>
-            `;
   }
 }
 

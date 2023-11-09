@@ -19,7 +19,6 @@ import "regenerator-runtime/runtime";
 //   module.hot.accept();
 // }
 
-console.log("hjoi");
 // DYNAMICALLY REQUESTS URL FROM WEBSITE AND DISPLAYS ENTIRE DATA.
 const controlRecipes = async function () {
   // Anchors change the hash of the page.
@@ -30,8 +29,8 @@ const controlRecipes = async function () {
     recipeView.renderSpinner();
 
     // 1) Update result & bookmarks View to HIGHLIGHT selected search results.
-    resultsView.update(model.getSearchResultsPage());
-    bookmarksView.update(model.state.bookmarks);
+    // resultsView.update(model.getSearchResultsPage());
+    // bookmarksView.update(model.state.bookmarks);
 
     // 2) Loading recipe
     await model.loadRecipe(id);
@@ -43,8 +42,6 @@ const controlRecipes = async function () {
     recipeView.renderError();
   }
 };
-
-/* 
 
 const controlSearchResult = async function () {
   try {
@@ -66,6 +63,8 @@ const controlSearchResult = async function () {
     console.log(err);
   }
 };
+
+/* 
 
 // RECEIVES PAGE TO GO TO FROM THE PUBLISHER FUNCTION.
 const controlPagination = function (goToPage) {
