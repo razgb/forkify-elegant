@@ -143,10 +143,6 @@
   font-weight: 300;
 }
 
-.recipe__ingredient > .icon {
-  /* align-self: flex-start; */
-}
-
 .ingredient__highlight {
   font-weight: 400;
 }

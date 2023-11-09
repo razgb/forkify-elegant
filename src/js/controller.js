@@ -1,8 +1,8 @@
 import * as model from "./model.js";
 import { MODAL_CLOSE_SEC } from "./config.js";
 import recipeView from "./views/recipeView.js";
-// import searchView from "src/views/searchView.js";
-// import resultsView from "src/views/resultsView.js";
+import searchView from "./views/searchView.js";
+import resultsView from "./views/resultsView.js";
 // import paginationView from "src/views/paginationView.js";
 // import bookmarksView from "src/views/bookmarksView.js";
 // import addRecipeView from "src/views/addRecipeView.js";
@@ -58,7 +58,7 @@ const controlSearchResult = async function () {
     resultsView.render(model.getSearchResultsPage(1));
 
     // 4) Render initial Pagination buttons.
-    paginationView.render(model.state.search);
+    // paginationView.render(model.state.search);
   } catch (err) {
     console.log(err);
   }
@@ -139,7 +139,7 @@ const controlAddRecipe = async function (newRecipe) {
 
 const init = function () {
   // bookmarksView.addHandlerRender(controlBookmarks); // First renders the bookmarks received from localstorage.
-  // searchView.addHandlerSearch(controlSearchResult);
+  searchView.addHandlerSearch(controlSearchResult);
   recipeView.addHandlerRender(controlRecipes); // Subscriber function that calls a func from the view and passes in a func to run.
   // recipeView.addHandlerUpdateServings(controlServings);
   // recipeView.addHandlerAddBookmark(controlAddBookmark);

@@ -49,7 +49,6 @@ export const loadRecipe = async function (id) {
   }
 };
 
-/*
 export const loadSearchResults = async function (query) {
   try {
     state.search.query = query;
@@ -84,6 +83,8 @@ export const getSearchResultsPage = function (page = state.search.page) {
   // THIS IS AN ARRAY THAT IS SLICED
   return state.search.results.slice(start, end);
 };
+
+/*
 
 // THIS IS NOT A PURE FUNCTION. MANIPULATES ORIGINAL VALUES OF SERVINGS.
 export const updateServings = function (newServings) {

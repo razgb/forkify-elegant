@@ -12,11 +12,14 @@ export default class View {
    * @author Raz Neaiz
    * @todo Finish implementation.
    */
+
   render(data, render = true) {
     if (!data || (Array.isArray(data) && data.length === 0))
       return this.renderError();
 
+    // VERY IMPORTANT.
     this._data = data;
+
     const markup = this._generateMarkup();
 
     if (!render) return markup; // to prevent render from the previewView occuring.
@@ -26,7 +29,6 @@ export default class View {
   }
 
   // DYNAMICALLY UPDATES ANY ELEMENT THAT HAS CHANGED.
-
   update(data) {
     // updated elements
     this._data = data;
