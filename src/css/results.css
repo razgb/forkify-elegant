@@ -113,6 +113,14 @@
   transition: all 0.2s;
 }
 
+.search__pagination--btn-left {
+  justify-self: flex-start;
+}
+
+.search__pagination--btn-right {
+  justify-self: end;
+}
+
 .search__pagination--btn:hover {
   background-color: var(--color-secondary-hover);
 }

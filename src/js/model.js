@@ -84,8 +84,6 @@ export const getSearchResultsPage = function (page = state.search.page) {
   return state.search.results.slice(start, end);
 };
 
-/*
-
 // THIS IS NOT A PURE FUNCTION. MANIPULATES ORIGINAL VALUES OF SERVINGS.
 export const updateServings = function (newServings) {
   state.recipe.ingredients.forEach((ing) => {
@@ -96,6 +94,7 @@ export const updateServings = function (newServings) {
   state.recipe.servings = newServings;
 };
 
+/*
 const persistBookmarks = function () {
   localStorage.setItem("bookmarks", JSON.stringify(state.bookmarks));
 };
